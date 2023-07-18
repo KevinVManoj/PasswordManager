@@ -16,9 +16,9 @@ class PasswordCreator:
             "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
             "u", "v", "w", "x", "y", "z"]
 
-        numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+        numberList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
         
-        specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "_", "=", ":", ";", "?"]
+        specialCharacterList = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "_", "=", ":", ";", "?"]
         
         totalLength = 0
         totalLength += upperCase
@@ -26,9 +26,13 @@ class PasswordCreator:
         totalLength += numbers
         totalLength += specialCharacters
 
-        a = False
+        upperCaseCount = 0
+        lowerCaseCount = 0
+        numbersCount = 0
+        specialCharactersCount = 0
         passwordChars = []
 
+        a = False
         while a == False:
             for x in range(totalLength):
                 chance = random.randint(1,4)
@@ -39,13 +43,14 @@ class PasswordCreator:
                     passwordChars.append(lowerAlphabet[(int)(random() * (lowerAlphabet.length - 1))])
                     lowerCaseCount += 1
                 elif chance == 3:
-                    passwordChars.append(numbers[(int)(random() * (numbers.length - 1))])
+                    passwordChars.append(numberList[(int)(random() * (numberList.length - 1))])
                     numbersCount += 1
                 elif chance == 4:
-                    passwordChars.append(specialCharacters[(int)(random() * (specialCharacters.length - 1))])
+                    passwordChars.append(specialCharacterList[(int)(random() * (specialCharacterList.length - 1))])
                     specialCharactersCount += 1
                 passwordString = ''.join(passwordChars)
 
             if upperCaseCount == upperCase and lowerCaseCount == lowerCase and numbersCount == numbers and specialCharactersCount == specialCharacters:
                 return passwordString
+                a = True
             
