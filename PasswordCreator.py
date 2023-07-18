@@ -19,14 +19,18 @@ class PasswordCreator:
         numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
         
         specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "_", "=", ":", ";", "?"]
-
-        totalLength = upperCase + lowerCase + numbers + specialCharacters
+        
+        totalLength = 0
+        totalLength += upperCase
+        totalLength += lowerCase  
+        totalLength += numbers
+        totalLength += specialCharacters
 
         a = False
         passwordChars = []
 
         while a == False:
-            for x in totalLength:
+            for x in range(totalLength):
                 chance = random.randint(1,4)
                 if chance == 1:
                     passwordChars.append(upperAlphabet[(int)(random() * (upperAlphabet.length - 1))])
