@@ -17,4 +17,6 @@ if x == 1:
     password_generator = PasswordCreator(userUppercase, userLowercase, userNumbers, userSpecial)
     password = password_generator.generatePassword(userUppercase, userLowercase, userNumbers, userSpecial)
     
+    print("If you like your password, type 1 to assign the password. If you wish for another password, type 2 to generate another.")
+    #MAKE THE OPTION BABABABABABABABA
     
