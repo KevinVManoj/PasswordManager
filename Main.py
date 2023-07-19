@@ -16,5 +16,5 @@ if x == 1:
 
     password_generator = PasswordCreator(userUppercase, userLowercase, userNumbers, userSpecial)
     password = password_generator.generatePassword(userUppercase, userLowercase, userNumbers, userSpecial)
-    print(password)
+    
     
