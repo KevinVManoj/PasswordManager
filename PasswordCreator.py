@@ -39,7 +39,7 @@ class PasswordCreator:
             passwordString = ''.join(passwordChars)
 
             if (upperCaseCount == self.upperCase and lowerCaseCount == self.lowerCase and numbersCount == self.numbers and specialCharactersCount == self.specialCharacters):
-                print(passwordString)
+                print("Here is your password:",passwordString)
                 a = True
             else:
                 a = False
@@ -49,4 +49,4 @@ class PasswordCreator:
             numbersCount = 0
             specialCharactersCount = 0
             passwordChars = []
-        return passwordString
+        #return passwordString
