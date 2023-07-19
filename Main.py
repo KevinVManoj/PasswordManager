@@ -12,8 +12,9 @@ if x == 1:
     userUppercase = int(input("How many uppercase letters would you like? "))
     userLowercase = int(input("How many lowercase letters would you like? "))
     userNumbers = int(input("How many numbers would you like? "))
-    userSpecial = int(input("H1ow many special characters would you like? "))
+    userSpecial = int(input("How many special characters would you like? "))
 
     password_generator = PasswordCreator(userUppercase, userLowercase, userNumbers, userSpecial)
     password = password_generator.generatePassword(userUppercase, userLowercase, userNumbers, userSpecial)
     print(password)
+    

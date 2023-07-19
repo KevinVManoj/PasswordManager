@@ -9,22 +9,9 @@ class PasswordCreator:
         self.specialCharacters = specialCharacters
 
     def generatePassword(self, upperCase, lowerCase, numbers, specialCharacters):
-        upperAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
-            "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+        specialCharacterList = list("!@#$%^&*()-+_=:;?")
         
-        lowerAlphabet = ["a", "b", "c",
-            "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
-            "u", "v", "w", "x", "y", "z"]
-
-        numberList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-        
-        specialCharacterList = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "_", "=", ":", ";", "?"]
-        
-        totalLength = 0
-        totalLength += upperCase
-        totalLength += lowerCase  
-        totalLength += numbers
-        totalLength += specialCharacters
+        totalLength = self.upperCase + self.lowerCase + self.numbers + self.specialCharacters
 
         upperCaseCount = 0
         lowerCaseCount = 0
@@ -37,20 +24,29 @@ class PasswordCreator:
             for x in range(totalLength):
                 chance = random.randint(1,4)
                 if chance == 1:
-                    passwordChars.append(upperAlphabet[(int)(random() * (upperAlphabet.length - 1))])
+                    passwordChars.append(random.choice(string.ascii_uppercase))
                     upperCaseCount += 1
                 elif chance == 2:
-                    passwordChars.append(lowerAlphabet[(int)(random() * (lowerAlphabet.length - 1))])
-                    lowerCaseCount += 1
+                    passwordChars.append(random.choice(string.ascii_lowercase))
+                    lowerCaseCount += 1 
                 elif chance == 3:
-                    passwordChars.append(numberList[(int)(random() * (numberList.length - 1))])
+                    passwordChars.append(str(random.choice(string.digits)))
                     numbersCount += 1
                 elif chance == 4:
-                    passwordChars.append(specialCharacterList[(int)(random() * (specialCharacterList.length - 1))])
+                    passwordChars.append(random.choice(specialCharacterList))
                     specialCharactersCount += 1
-                passwordString = ''.join(passwordChars)
+            #print()
+            passwordString = ''.join(passwordChars)
 
-            if upperCaseCount == upperCase and lowerCaseCount == lowerCase and numbersCount == numbers and specialCharactersCount == specialCharacters:
-                return passwordString
+            if (upperCaseCount == self.upperCase and lowerCaseCount == self.lowerCase and numbersCount == self.numbers and specialCharactersCount == self.specialCharacters):
+                print(passwordString)
                 a = True
+            else:
+                a = False
             
+            upperCaseCount = 0
+            lowerCaseCount = 0
+            numbersCount = 0
+            specialCharactersCount = 0
+            passwordChars = []
+        return passwordString
