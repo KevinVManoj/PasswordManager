@@ -35,11 +35,11 @@ class PasswordCreator:
                 elif chance == 4:
                     passwordChars.append(random.choice(specialCharacterList))
                     specialCharactersCount += 1
-            #print()
+
             passwordString = ''.join(passwordChars)
 
             if (upperCaseCount == self.upperCase and lowerCaseCount == self.lowerCase and numbersCount == self.numbers and specialCharactersCount == self.specialCharacters):
-                print("Here is your password:",passwordString)
+                return passwordString
                 a = True
             else:
                 a = False
