@@ -1,15 +1,16 @@
 import random
 import string
+from PasswordReader import PasswordReader
 
 class PasswordCreator:
     def __init__(self, upperCase, lowerCase, numbers, specialCharacters):
         self.upperCase = upperCase
         self.lowerCase = lowerCase
-        self.numbers = numbers
+        self.numbers = numbers    
         self.specialCharacters = specialCharacters
-
+        
     def generatePassword(self, upperCase, lowerCase, numbers, specialCharacters):
-        specialCharacterList = list("!@#$%^&*()-+_=:;?")
+        specialCharacterList = list("!@#$%^&*()-+_=;?")
         
         totalLength = self.upperCase + self.lowerCase + self.numbers + self.specialCharacters
 
@@ -49,4 +50,3 @@ class PasswordCreator:
             numbersCount = 0
             specialCharactersCount = 0
             passwordChars = []
-        #return passwordString
