@@ -8,6 +8,7 @@ filePasswords = PasswordReader()
 print("Welcome to Kevin's password manager,")
 print("You can either create a new password for a service you use with your own requirements")
 print("Or you can access your passwords")
+print(filePasswords.passwordEntries)
 
 programUpkeep = True
 while programUpkeep == True:
@@ -52,7 +53,7 @@ while programUpkeep == True:
             print(oj)
     elif x == 4:
         programUpkeep = False
-        filePasswords.endingProgram("Passwords.csv")
+        filePasswords.endingProgram("Passwords.json")
         print("Exiting the program.")
     else:
         print("Invalid choice. Please try again.")
