@@ -4,12 +4,33 @@ from PasswordReader import PasswordReader
 
 class PasswordCreator:
     def __init__(self, upperCase, lowerCase, numbers, specialCharacters):
+        """
+        Initializes the PasswordCreator class with password generation requirements.
+
+        Args:
+            upperCase (int): The number of uppercase letters in the generated password.
+            lowerCase (int): The number of lowercase letters in the generated password.
+            numbers (int): The number of numbers in the generated password.
+            specialCharacters (int): The number of special characters in the generated password.
+        """
         self.upperCase = upperCase
         self.lowerCase = lowerCase
-        self.numbers = numbers    
+        self.numbers = numbers
         self.specialCharacters = specialCharacters
-        
+
     def generatePassword(self, upperCase, lowerCase, numbers, specialCharacters):
+        """
+        Generates a password based on specified requirements.
+
+        Args:
+            upperCase (int): The number of uppercase letters in the generated password.
+            lowerCase (int): The number of lowercase letters in the generated password.
+            numbers (int): The number of numbers in the generated password.
+            specialCharacters (int): The number of special characters in the generated password.
+
+        Returns:
+            str: The generated password.
+        """
         specialCharacterList = list("!@#$%^&*()-+_=;?")
         
         totalLength = self.upperCase + self.lowerCase + self.numbers + self.specialCharacters
