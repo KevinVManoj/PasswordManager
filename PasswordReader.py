@@ -88,7 +88,7 @@ class PasswordReader:
                 for passwordsData in passwordsDataList:
                     encryptedPasswords = passwordsData.get("password", [])
                     if encryptedPasswords:
-                        decryptedPassword = self.decrypt_data(encryptedPasswords.encode())
+                        decryptedPassword = self.decryptData(encryptedPasswords.encode())
                         self.passwordEntries.append(decryptedPassword)
         except FileNotFoundError:
             # If 'Passwords.json' file is not found, print an error message
@@ -120,7 +120,7 @@ class PasswordReader:
             None
         """
         # Generate a new encryption key
-        newKey = Fernet.generateKey().decode('utf-8')
+        newKey = Fernet.generate_key().decode('utf-8')
 
         try:
             # Create a dictionary containing the current key and the new key
