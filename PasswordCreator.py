@@ -18,7 +18,7 @@ class PasswordCreator:
         self.numbers = numbers
         self.specialCharacters = specialCharacters
 
-    def generatePassword(self, upperCase, lowerCase, numbers, specialCharacters):
+    def generatePassword(self):
         """
         Generates a password based on specified requirements.
 
